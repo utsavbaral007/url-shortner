@@ -26,10 +26,9 @@
 ├── controllers/
 ├── models/
 ├── routes/
-├── utils/
+├── connection.js/
 ├── config/
-├── app.js
-└── server.js
+└── index.js
 ```
 
 ---
