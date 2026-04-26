@@ -3,7 +3,7 @@ const urlRouter = express.Router();
 const {
   handleCreateShortUrl,
   handleRedirectLink,
-} = require("../controller/url.controller");
+} = require("../controllers/url.controller");
 
 urlRouter.route("/").post(handleCreateShortUrl);
 urlRouter.route('/:shortId').get(handleRedirectLink)
