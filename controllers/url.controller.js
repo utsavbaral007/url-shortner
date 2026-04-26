@@ -1,5 +1,6 @@
 const { nanoid } = require("nanoid");
 const { urlModel } = require("../models/url.model");
+const { param } = require("../routes/url.route");
 
 const handleCreateShortUrl = async (req, res) => {
   const { body } = req;
@@ -39,4 +40,24 @@ const handleRedirectLink = async (req, res) => {
   }
 };
 
-module.exports = { handleCreateShortUrl, handleRedirectLink };
+const handleUrlAnalytics = async (req, res) => {
+  const { params } = req;
+  const shortId = params.shortId;
+  if (!shortId) return res.status(400).json({ message: "Link ID not present" });
+  try {
+    const response = await urlModel.findOne({ shortId });
+    return res.status(200).json({
+      clicks: response.visitHistory.length,
+      visitHistory: response.visitHistory,
+    });
+  } catch (err) {
+    console.log(`Error fetching analytics ${err}`);
+    return res.status(400).json({ message: "Error fetching analytics data" });
+  }
+};
+
+module.exports = {
+  handleCreateShortUrl,
+  handleRedirectLink,
+  handleUrlAnalytics,
+};
