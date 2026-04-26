@@ -2,21 +2,21 @@
 
 > A fast, scalable, and minimal backend service for shortening long URLs into clean, shareable links.
 
-![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge\&logo=node.js)
+![Node.js](https://img.shields.io/badge/Node.js-18+-green?style=for-the-badge&logo=node.js)
 ![Express](https://img.shields.io/badge/Express.js-%23404d59.svg?style=for-the-badge)
-![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?style=for-the-badge\&logo=mongodb)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?style=for-the-badge&logo=mongodb)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
 ---
 
 ## ✨ Features
 
-* 🔗 Shorten long URLs instantly
-* ⚡ Fast redirection
-* 📊 Track click counts
-* 🧠 Unique short code generation
-* 🔒 Input validation & error handling
-* 🌍 RESTful API design
+- 🔗 Shorten long URLs instantly
+- ⚡ Fast redirection
+- 📊 Track click counts
+- 🧠 Unique short code generation
+- 🔒 Input validation & error handling
+- 🌍 RESTful API design
 
 ---
 
@@ -65,7 +65,7 @@ npm start
 Server will start at:
 
 ```
-http://localhost:5000
+http://localhost:3000
 ```
 
 ---
@@ -99,7 +99,7 @@ POST /api/url
 ### ➤ Redirect to Original URL
 
 ```
-GET /:shortId
+GET api/url/:shortId
 ```
 
 ➡️ Redirects to the original URL.
@@ -109,7 +109,7 @@ GET /:shortId
 ### ➤ Get URL Analytics (Optional)
 
 ```
-GET /api/analytics/:shortCode
+GET /api/url/analytics/:shortId
 ```
 
 #### Response
@@ -118,7 +118,7 @@ GET /api/analytics/:shortCode
 {
   "originalUrl": "https://example.com",
   "clicks": 10,
-  "createdAt": "2026-04-26T10:00:00Z"
+  "visitedHistory": []
 }
 ```
 
@@ -126,10 +126,10 @@ GET /api/analytics/:shortCode
 
 ## 🛠️ Tech Stack
 
-* Node.js
-* Express.js
-* MongoDB + Mongoose
-* nanoid / uuid
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- nanoid / uuid
 
 ---
 
@@ -144,19 +144,19 @@ npm start       # Run production server
 
 ## 🔒 Validation & Error Handling
 
-* Validates URL format before shortening
-* Handles duplicate entries
-* Returns meaningful HTTP status codes
+- Validates URL format before shortening
+- Handles duplicate entries
+- Returns meaningful HTTP status codes
 
 ---
 
-## 🌱 Future Improvements
+<!-- ## 🌱 Future Improvements
 
-* 🔐 Authentication & user accounts
-* 📈 Advanced analytics dashboard
-* ⏳ URL expiration
-* 🧾 Custom aliases
-* 🌍 Rate limiting
+- 🔐 Authentication & user accounts
+- 📈 Advanced analytics dashboard
+- ⏳ URL expiration
+- 🧾 Custom aliases
+- 🌍 Rate limiting -->
 
 ---
 
@@ -188,7 +188,7 @@ This project is licensed under the MIT License.
 
 ## 💡 Author
 
-Built with ❤️ by **Your Name**
+Built with ❤️ by **Utsav Baral**
 
 ---
 

@@ -14,6 +14,8 @@ const urlSchema = new mongoose.Schema(
     visitHistory: [
       {
         timeStamp: { type: Number },
+        ip: { type: String },
+        userAgent: { type: String },
       },
     ],
   },
