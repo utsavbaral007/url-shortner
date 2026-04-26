@@ -38,8 +38,8 @@
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/url-shortener-backend.git
-cd url-shortener-backend
+git clone https://github.com/your-username/url-shortener.git
+cd url-shortener
 ```
 
 ### 2. Install dependencies
@@ -53,15 +53,13 @@ npm install
 Create a `.env` file in the root directory:
 
 ```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-BASE_URL=http://localhost:5000
+MONGO_URL=your_mongodb_connection_string
 ```
 
 ### 4. Run the server
 
 ```bash
-npm run dev
+npm start
 ```
 
 Server will start at:
@@ -77,14 +75,14 @@ http://localhost:5000
 ### ➤ Create Short URL
 
 ```
-POST /api/shorten
+POST /api/url
 ```
 
 #### Request Body
 
 ```json
 {
-  "url": "https://example.com"
+  "redirectUrl": "https://example.com"
 }
 ```
 
@@ -92,7 +90,7 @@ POST /api/shorten
 
 ```json
 {
-  "shortUrl": "http://localhost:5000/abc123"
+  "shortId": "12345"
 }
 ```
 
@@ -101,7 +99,7 @@ POST /api/shorten
 ### ➤ Redirect to Original URL
 
 ```
-GET /:shortCode
+GET /:shortId
 ```
 
 ➡️ Redirects to the original URL.
@@ -111,7 +109,7 @@ GET /:shortCode
 ### ➤ Get URL Analytics (Optional)
 
 ```
-GET /api/stats/:shortCode
+GET /api/analytics/:shortCode
 ```
 
 #### Response
@@ -131,7 +129,6 @@ GET /api/stats/:shortCode
 * Node.js
 * Express.js
 * MongoDB + Mongoose
-* dotenv
 * nanoid / uuid
 
 ---
@@ -139,7 +136,7 @@ GET /api/stats/:shortCode
 ## ⚙️ Scripts
 
 ```bash
-npm run dev     # Run with nodemon
+npm start       # Run with nodemon
 npm start       # Run production server
 ```
 
